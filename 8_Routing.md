@@ -37,6 +37,9 @@
             - updates routing tables every 30 seconds
             - easy to configure
             - runs over UDP
+          - BGP
+            - Border Gateway Protocol
+            - uses the number of autonomous system hops instead of router hops
       - link state
         - link speed, and how quick the route is
         - bandwidth is king
@@ -47,8 +50,15 @@
         - example protocols
           - OSPF
             - Open Shortest Path First
+            - cost based on link speed
           - IS-IS
+            - Intermediate System to Intermediate System
+            - similar to OSPF, but not as popular
       - hybrid
+        - EIGRP
+          - hybrid of distnce vector and link state protocols
+          - uses bandwidth and delay
+          - proprietary to Cisco
       - hold-down timer
         - prevents updates for a specific period of time and speeds up convergence
 55. Address Translation (NAT and PAT) (OBJ. 1.4)
