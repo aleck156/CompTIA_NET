@@ -1,0 +1,251 @@
+# 1 - MEDIA
+
+- physical ways of transferring data
+  - copper
+  - fiber optics
+  - wireless
+
+# 2 - COPPER MEDIA
+
+- coaxial
+  - building
+    - center wire
+    - insulator
+    - metallic shield
+    - braided metal shielding
+    - plastic jacket
+  - RG-6
+    - very thick cable
+    - outdoor, very durable
+  - RG-59
+    - in-house use, flexible
+  - connectors
+    - F-Type - modern usage, screw-on connector
+    - BNC - outdated, never used
+      - push in, then screw 1/2 in
+  - twinaxial cable
+    - a pair of cables, very similar to coaxial
+    - short distances only
+    - very high speed - up to 10 GBit/s
+    - saves a bit of money when compared to fiber optics
+    - f.e. between routers in a base room
+    - you'll rarely see them used, they're RARE
+- serial
+  - straight copper wires
+  - plastic jacket
+  - DB-9 or DB-25 connector
+    - RS-232 are very old, and never used nowadays
+- twisted pair
+  - most popupar LAN technology
+  - 8 individually insulated cables
+  - the twist protects from EMI, electromagnetic interference, thus better speed
+  - UTP
+    - unshielded
+    - wires are twisted, and covered with only one layer of plastic cover
+    - cheaper
+  - STP
+    - much harder to bend
+    - more expensive
+    - additional shielding
+      - each twisted pair is shielded
+      - one main shielding on all 4 pairs
+  - UTP and STP similarities
+    - 100m max distance
+    - RJ-45 or RJ-11 connector
+    - twisted pair wires
+  - 1 Gbps or more require to use all 4 pairs
+- bandwidth
+  - theoretical measure of how much data could be transferred from a source to its destination
+  - estimation
+- throughput
+  - actual measure of how much data transferred from a source to its destination
+  - measured results
+- CATEGORIES
+  - CAT 3 / ethernet
+    - 10BASE-T / 10 Mbps / 100m
+    - T - twisted pair
+  - CAT 5 / fast ethernet
+    - 100BASE-TX / 100 Mbps / 100m
+  - CAT 5e
+    - 1000BASE-T / 1 Gbps / 100m
+  - CAT 6
+    - 1000BASE-T / 1 Gbps / 100m
+    - 10GBASE-T / 10 Gbps / 55m
+  - CAT 6a
+    - 10GBASE-T / 10 Gbps / 100m
+    - RJ-45 connector
+  - CAT 7
+    - 10GBASE-T / 10 Gbps / 100m
+    - TERA connector
+    - came 6 years before 6a
+  - CAT 8
+    - 40GBASE-T / 40 Gbps / 30m
+  - NOTES
+    - switch/router is necessary to extend the 100m limitation
+    - stick to under 70m for a connection to be safe
+- WIRING
+  - straight through / patch cable
+    - exact pinout on both connectors
+    - 568B <-> 568B color scheme connection
+      - 568B = WO / O / WG / Bl / WBl / G / WBr / Br
+    - DTE - DCE connection
+      - DTE - data terminal equipment, end point devices, computer, printer, et c.
+      - DCE - data communication devices - switch, router, et c.
+  - crossover cable
+    - DCE-DCE or DTE-DTE connection
+    - swaps end and receive pins on the other end of the cable when the connector and its pinout are created
+    - 568A <-> 568B
+      - 568A = WG / G / WO / Bl / WBl / O / WBr / Br
+  - use tools
+    - wire stripper
+    - connection fixer
+    - rj-45 crimper
+    - cable tester
+    - n connectors
+  - MDIX
+    - medium dependent interface crossover
+      - automated way to electronically simulate a crossover cable connector even if using a straight-through patch cable
+    - in routers, switches
+    - allows to use patch cable
+    - on exams, assume that all networking devices are NOT using MDIX unless specified directly
+- Plenum Cable
+  - special coating put on a UTP or STP cable that provides a fire-retardant chemical layer to the outer insulating jacket
+  - used in construction works where you have zero access to the cable,
+  - in walls, ceiling, raised floors, air ducts
+
+# 4 - FIBER MEDIA
+
+- immune to electromagnetic field disurbtions
+- can go up to hundreds of miles
+- greater data capacity
+- Tbps available here
+- 10Gbps is typically used due to limitations caused by other network devices
+- drawbacks
+  - expensive
+  - difficult to work with
+- classification
+  - single-mode
+    - SMF
+    - longer distances
+    - smaller core size
+      - 8.3 - 10 micron in diameter
+    - more precise signal
+    - only single mode of travel for the light signal
+    - large roll used by workers
+    - yellow shielding color
+  - multi-mode
+    - MMF
+    - shorter distance
+      - 50-100 micron diameter
+    - up to 2 km distance
+    - used in buildings to connect routers
+    - orange or blue color
+- connectors
+  - SC
+    - subscriber connector
+    - stick and click
+    - low cost, durable, easy to install
+    - typically, 2 individual cables
+  - ST
+    - straight tip connector
+    - stick and twist
+    - typically, 2 cables
+    - like BNC
+  - LC
+    - lucent connector
+    - smaller version of SC
+    - love connector
+    - 2 cables joined
+  - MTRJ
+    - mechanical transfer registered jack
+    - smaller form packet
+      - half the size
+    - transceiver and receiver connectors within one jack
+    - typically black connector
+- connector options
+  - APC
+    - angled physical contact
+    - angle: 8 degrees
+    - better overall signal with less noise
+    - green connector
+  - UPC
+    - ultra physical contact
+    - more noise, signal loss
+    - blue
+- WDM
+  - wavelength division multiplexing
+  - combines multiple signals into one signal and sends over a single fibre optic strand using different wavelengths of the laser light source
+  - multiplexer at the sender
+  - demultiplexer at the receiver
+  - types
+    - CWDM - coarse
+      - up to 18 wavelength channels
+      - channel distance: 20 nm
+      - up to 10 Gbps ethernet / up to 16 Gbps fiber
+      - the longer distance, the less channels
+        - over 20 km = max 8 channels
+      - used most often
+    - DWDM - dense
+      - up to 80 wavelength channels
+      - channel distance: 0.8 nm
+      - up to 8 Tbps / 100 Gbps per channel
+      - big telco companies only use it
+      - EXPENSIVE
+        - for internet backbone mostly
+
+# 5 - TRANSCEIVERS
+
+- SFP
+  - small form-factor pluggable
+  - up to 4.2 Gbps
+- SFP+
+  - up to 16 Gbps
+- QSFP
+  - quad small form factor pluggable
+  - up to 40 Gbps
+- QSFP+
+  - up to 41.2 Gbps
+- QSFP28
+  - up to 100 Gbps
+- QSFP56
+  - up to 200 Gbps
+
+# 6 - CABLE DISTRIBUTION
+
+- MDF
+  - media distribution frame
+- IDF
+  - intermediate distribution frames
+  - edge routers and switches
+  - patch pannels
+  - media converters and transceivers
+- cable tray
+  - securely routing cables
+- minimize the number of cables that have to cross floors vertically
+- distribution blocks
+  - 66 block
+    - M block
+    - older, analog systems, CAT 3
+    - designed for analog telephones
+    - 25-pair cables
+    - different tools needed to work with
+  - 110 block
+    - exclusively in american networks
+    - high speed data networks
+    - CAT 5
+    - includes insulation dispolacement contract connectors
+  - Krone block
+    - EU alternative to 110 block
+    - proprietary
+    - requires tooling for this type of connectors
+  - BIX block
+  - patch panels
+    - keep your cables organized
+    - 2 sides
+      - all the network jacks
+      - 110-block punch
+    - fiber distribution panels
+      - no punch back panels on the back
+      - connect fibers with different jacks
+
+# 7 - WIRING A NETWORK

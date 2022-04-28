@@ -1,0 +1,156 @@
+# Section 7: IP Addressing
+
+42. IP Addressing (OBJ. 1.4)
+    - all addresses must uniquely identify a specific object
+43. IPv4 Addressing (OBJ. 1.4)
+    - 5 classes / 1st octet / default subnet mask / possible host number
+      - A / 1 - 127 / 255.0.0.0 / 16.7M
+      - B / 128 - 191 / 255.255.0.0 / 65,535
+      - C / 192 - 233 / 255.255.255.0 / 256
+      - D / 244 - 239 / no subnet mask - special usage
+        - multicast routing
+      - E / 240 - 255 / no default subnet mask / 268 million / reserved
+        - experimental purposes
+        - research
+        - development
+    - classful mask
+      - the default subnet mask for a given class of IP addresses
+    - subnetting
+    - CIDR - classless inter-domain routing
+      - allows for the borrowing some of those host bits and reassigning them to the network portion
+      - CIDR notation -> IP/subnetMask
+      - shorthand notation used to summarize continuous networks called using route aggregation
+    - RFC 1918
+      - used to documetn how organizations could conduct address allocation for private internets / intranet
+      - class A
+        - starts with 10 -> 10.0.0.0 - 10.255.255.255
+        - up to 16.7M possible hosts
+      - class B
+        - starts with 172.16 - 172.31
+        - 172.16.0.0 - 172.31.255.255
+        - up to 1.05M hosts
+      - class C
+        - 192.168
+        - 192.168.0.0 - 192.168.255.255
+        - up to 65,535 hosts
+    - special addresses
+      - loopback
+        - 127.0.0.1
+        - localhost
+      - APIPA
+        - automatic private IP addresses
+        - used when a device does not have a static IP address or cannot reach a DHCP server
+        - 169.254.0.0 - 169.254.255.255
+    - DORA Process
+      - Discover
+      - Offer
+      - Request
+      - Acknowledge
+    - Virtual IP Addresses
+      - an IP address that does not correlate to an actual phusical network interface
+      - usage
+        - NAT
+        - fault tolerance
+        - virtualization
+44. IPv4 Data Flows (OBJ. 1.4)
+    - Unicast
+    - Multicast
+      - from a specific source to multiple, yet specified destinations
+    - Broadcast
+      - from a single source, to anyone, no limitations whom to
+45. Assigning IP Addresses (OBJ. 1.4 & 1.6)
+    1. static
+    2. dynamic -> DHCP
+       - IP address
+       - subnet mask
+       - default gateway
+       - DNS/WINS server address
+         - Windows Internet Names Service - WINS
+         - identifies NetBIOS systems on a TCP/IP network and converts those NetBIOS names to IP addresses
+         - it works only in MS Windows domain
+    3. dynamic IP allocation protocols
+       - BOOTP
+         - the oldest
+         - the least used nowadays
+         - allows a workstation to load a copy of their boot image over the network
+         - static MAC + IP table at server
+       - DHCP
+         - Dynamic Host Configuration Protocol
+         - assign IP based on an assignable scope or pool of addresses
+         - provides the ability to configure numerous other options within it
+         - each IP address is leased for a period of time and returns to the pool when lease expires
+         - modern implementation of BOOTP
+         - most commonly used nowadays
+       - APIPA
+         - when a device doesn't have a static IP address or cannot connect to DHCP server
+         - by default activated as an alternative configuration on windows machines
+         - allows for quick configuration of a LAN without the need for a DHCP server
+         - APIPA-assigned devices cannot communicate outside the LAN or with non-APIPA devices
+       - ZeroConf
+         - upgradeed APIPA version
+         - assign an IPv4 link-local address to a client
+         - resolving local computer addresses using mDNS
+         - perform service discovery on a network
+         - Bonjour @ Apple, LLMNR @ Windows, systemD @ Linux
+46. Computer Mathematics (OBJ. 1.4)
+47. Subnetting (OBJ. 1.4)
+    - Network ID
+      - first IP address of a network
+    - Broadcast ID
+      - last address of a network
+    - VLSM
+      - Variable length subnet masks
+      - subnetting of subnets
+      - allows subnets of various sizes to be used and requires a routing protocol that supports it
+    - routing protocols
+      - RIP
+      - OSPF
+      - IS-IS
+      - EIGRP
+      - BGP
+48. Subnetting Practice (OBJ. 1.4)
+49. Subnetting by Hand (OBJ. 1.4)
+50. IPv6 Addressing (OBJ. 1.4)
+    - larger address space
+    - no broadcasting
+    - no fragmentation
+    - no MTU for discovery in each section
+    - can coexist with IPv4
+    - tunneling
+      - allows an existing IPv4 router to carry IPv6 traffic
+    - simplified header
+    - globally-routed
+      - similar to unicast class A, B, C
+      - starts with 2000 - 3999
+    - link-local / local use
+      - used like a private IP in IPv4
+      - only in local area netowrk
+      - begins with FE80
+    - SLAAC
+      - stateless address autoconfiguration
+      - eliminates the need to obtain addresses or other configuration information from a central server
+    - multicast addresses
+      - used to identify a set of interfaces and begins with FF
+    - anycast address
+      - used to identify a set of interfaces so thtat a packet can be sent to any member of a set
+    - EUI
+      - Extended Unique Identifier
+      - allows a host to assign itself a unique 64-bit IPv4 interface identifier called an EUI-64
+      - in-between 48-bit MAC address, there are added 16-bit hex data
+    - NDP
+      - Neighbor Discovery Protocol
+      - used to learn the layer 2 addresses that are on a given network
+      - router solicitation
+      - router advertisement
+      - neighbor solicitation
+      - neighbor advertisement
+      - redirection
+51. IPv6 Data Flows (OBJ. 1.4)
+    - unicast
+      - peer to peer
+    - multicast
+      - peer to multicast group
+    - anycast
+      - no more broadcast in IP v6
+      - unique to IPv6
+      - data travels from a single source device to the device nearest to multiple (but specific) destination devices
