@@ -40,6 +40,10 @@
           - BGP
             - Border Gateway Protocol
             - uses the number of autonomous system hops instead of router hops
+            - backbone of the internet
+            - widespread utilization
+            - route believability
+              - if a route has a lower administrative distance (AD), the route is more believable
       - link state
         - link speed, and how quick the route is
         - bandwidth is king
@@ -62,4 +66,43 @@
       - hold-down timer
         - prevents updates for a specific period of time and speeds up convergence
 55. Address Translation (NAT and PAT) (OBJ. 1.4)
+    - NAT
+      - conserve the limited supply of IPv4 addresses
+      - translate private IP addresses to public IP address for routing over public networks
+    - PAT
+      - sharing of one public IP by multiple private IP addresses which gives a many-to-one translation
+      - most popular nowadays
+    - DNAT
+      - Dynamic NAT
+      - automatically assigns an IP address from a pool and gives a one-to-one transaltion
+    - SNAT
+      - manually assign an IP address and give one-to-one translation
 56. Multicast Routing (OBJ. 1.4)
+    - multicast sender sends traffic to a class D IP address, known as a multicast group
+    - IGMP
+      - Internet Group Management Protocol
+      - lets routers know which interfaces have multicast receivers and allows clients to join a multicast group
+      - IGMPv1
+        - client requests joining the group
+        - asked every 60 seconds if it wants to remain in the group
+      - IGMPv2
+        - client has the ability to send a message to exit that multicast group
+        - no more checking every 60 seconds
+      - IGMPv3
+        - client can request multicast only from specific servers
+        - allows source-specific multicast (SSM) and multiple video streams to a single multicast stream
+    - PIM
+      - Protocol-Independent Multicast
+      - routes multicast traffic between routers
+      - forms a multicast distribution tree
+      - modes
+        - Dense Mode
+          - PIM-DM
+          - periodic flood and prune behavior to form optimal distribution tree
+          - can cause negative performance of network
+          - flooding every 3 minutes
+        - Sparse Mode
+          - PIM-SM
+          - shared distribution tree
+          - creates an optimal distribution tree through shortest path tree (SPT) switchover
+          -
