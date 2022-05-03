@@ -106,3 +106,20 @@
           - shared distribution tree
           - creates an optimal distribution tree through shortest path tree (SPT) switchover
           -
+
+### Quiz
+1. Classless protocols
+ - inlcude subnet mask information
+ - OSPF
+ - EIGRP
+ - RIPv2
+ - IS-IS
+2. routing
+  - OSPF supports IPv4 and VLSN - variable length subnet mask
+  - link-state routing protocol
+  - developed for IP networks
+  - based on Shortest Path First (SPF) algorithm
+  - an IGP - interior gateway protocol
+  - VRRP, RIPv1, HSRP do not support VLSM
+3. protocols that allow to determine paths to another networks
+  - BGP
